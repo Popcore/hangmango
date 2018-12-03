@@ -1,5 +1,5 @@
-# HangManGo
-HangManGo ia an implemenatation of the hangman game in Go.
+# HangmanGo
+HangmanGo ia an implemenatation of the hangman game in Go.
 
 ## Setup
 
