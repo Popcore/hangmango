@@ -7,13 +7,13 @@ ARTEFACT_DIR=artefacts
 all: help
 
 .PHONY: build
-build: ## build executable
+build: ## builds executable
 	@echo "==> building executable"
 	@mkdir -p build/
 	go build -o $(BUILD_DIR)/$(EXECUTABLE) $(PACKAGE)
 
 .PHONY: test
-test: ## run tests
+test: ## runs tests
 	@echo "==> running tests"
 	@mkdir -p $(ARTEFACT_DIR)
 	@echo 'mode: atomic' > $(ARTEFACT_DIR)/coverage.out
@@ -21,7 +21,7 @@ test: ## run tests
 	@go tool cover -html=$(ARTEFACT_DIR)/coverage.out -o $(ARTEFACT_DIR)/coverage.html
 
 .PHONY: help
-help: ## show this help message
+help: ## shows this help message
 	@echo 'usage: make [target] ...'
 	@echo
 	@echo 'targets:'
