@@ -42,7 +42,7 @@ func New(port string) (*Client, error) {
 }
 
 // Play starts a new gaming sessions. It authenticates the player and starts listening
-// to the commnads issueed by her/him.
+// to the commands issued.
 func (c Client) Play() error {
 	err := c.authenticateUser()
 	if err != nil {
@@ -85,13 +85,13 @@ func (c Client) parseUserCommand() messages.PlayerReq {
 	return req
 }
 
-// encodeRequest encode PlayerReq messages as JSON payloads. Returns an error if the
+// encodeRequest encode PlayerReq messages as JSON payloads. It returns an error if the
 // encoding process fails.
 func (c Client) encodeRequest(req messages.PlayerReq) error {
 	return c.Encoder.Encode(req)
 }
 
-// decodeResponse decodes server JSON responses into resp. Returns an error if the
+// decodeResponse decodes server JSON responses into resp. It returns an error if the
 // decoding process fails.
 func (c Client) decodeResponse(resp interface{}) error {
 	return c.Decoder.Decode(&resp)
